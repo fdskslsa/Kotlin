@@ -1,0 +1,13 @@
+/**
+ * You can edit, run, and share this code.
+ * play.kotlinlang.org
+ */
+fun main() {
+    val test = Test()
+    val test2 = test.copy()
+    println("$test")
+}
+
+data class Test(val a: Int = 0) {
+    override fun toString(): String = "Hohoho"
+}
