@@ -1,0 +1,12 @@
+//Oператор безопасного вызова
+fun main() {
+    var name: String? = "Five"
+//Если нейм не налл, то свойство length вызывается и его значение присваивается переменной length. 
+//Если name null, то выражение name?.length возвращает null, и не возникает исключение NullPointerException.    
+    val length = name?.length
+    println(length) // печатает 4
+
+    name = null
+    val nullLength = name?.length
+    println(nullLength) // печатает null
+}
