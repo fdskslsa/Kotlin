@@ -1,0 +1,26 @@
+fun main() {
+    var name: String? = "Kotlin"
+    
+    // Проверка на null
+    if (name != null) {
+        println("Длина строки: ${name.length}")
+    }
+
+    // Безопасный вызов
+   //Этот оператор позволяет вызывать методы или доступаться к свойствам у нуллабельных объектов, если они не равны null.    
+   println("Длина строки (безопасный вызов): ${name?.length}") // Если nullableString равен null, вернёт null
+    
+   // Оператор Эльвиса
+   //Этот оператор используется для предоставления значения по умолчанию, если переменная равна null.    
+    val length = name?.length ?: 0
+    println("Длина строки (с оператором Эльвиса): $length") // Если nullableString равен null, length будет 0
+    
+    
+    // Оператор !!
+    // Этот оператор преобразует нуллабельный тип в ненуллабельный, выбрасывая NullPointerException, если переменная равна null    
+    try {
+        println("Длина строки (!!): ${name!!.length}")
+    } catch (e: NullPointerException) {
+        println("Ошибка: ${e.message}")
+    }
+}
