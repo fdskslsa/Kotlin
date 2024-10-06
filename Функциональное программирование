@@ -1,0 +1,10 @@
+fun main(){
+ mapExample()
+}
+
+fun mapExample(){
+		val list = listOf("f", "y", "a", "d", "c")
+	println(list)
+	val mappedList = list.map{it + " 1"}
+	println(mappedList)
+}
