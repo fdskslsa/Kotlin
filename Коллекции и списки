@@ -1,0 +1,40 @@
+fun main() {
+  val patrons = mutableListOf("Eli", "Mordoc", "Sophie")
+  println(patrons[0]) 
+  
+  patrons.remove("Mordoc")
+  patrons.add("Jack")
+  println(patrons)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+}
+
+class CollectionsExample {
+    fun listsExample() {
+        // Создать список
+        val myList: List<String> = listOf("Яблоко", "Банан", "Вишня")
+
+        // Доступ к элементам
+        println(myList[0]) // Вывод: Яблоко
+
+        // Изменить список (возможно только с изменяемыми списками)
+        val mutableList: MutableList<String> = mutableListOf("Яблоко", "Банан", "Вишня")
+        mutableList.add("Дата")
+        println(mutableList) // Вывод: [Яблоко, Банан, Вишня, Дата]
+    }
+}
+
+class CollectionsExample {
+    fun setsExample() {
+        // Создать множество
+        val mySet: Set<String> = setOf("Яблоко", "Банан", "Вишня")
+
+        // Доступ к элементам (без индексации, так как множества неупорядочены)
+        for (element in mySet) {
+            println(element)
+        }
+
+        // Изменить множество (возможно только с изменяемыми множествами)
+        val mutableSet: MutableSet<String> = mutableSetOf("Яблоко", "Банан", "Вишня")
+        mutableSet.add("Дата")
+        println(mutableSet) // Вывод: [Яблоко, Банан, Вишня, Дата]
+    }
+}
