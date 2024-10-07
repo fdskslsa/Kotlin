@@ -1,5 +1,8 @@
 fun main(){
  mapExample()
+mapTest()
+flatMapTest()
+filterTest()
 }
 
 fun mapExample(){
@@ -7,4 +10,31 @@ fun mapExample(){
 	println(list)
 	val mappedList = list.map{it + " 1"}
 	println(mappedList)
+}
+
+
+//Функция `map()` преобразует каждый элемент коллекции в новый элемент, 
+//используя переданную функцию преобразования.
+fun mapTest(){
+val numbers = listOf(1, 2, 3, 4, 5)
+val doubleNumbers = numbers.map { it * 2 } // doubleNumbers = [2, 4, 6, 8, 10]
+}
+
+
+//Функция `flatMap()` преобразует каждый элемент коллекции в новый элемент, 
+//используя переданную функцию преобразования, и затем "разворачивает" полученные коллекции в одну.
+
+fun flatMapTest{
+val numbers = listOf(1, 2, 3)
+val strings = numbers.flatMap { listOf(it.toString(), (it * 2).toString()) } 
+// strings = ["1", "2", "2", "4", "3", "6"]
+}
+
+
+//Функция `filter()` возвращает новую коллекцию, содержащую только те элементы, 
+//которые удовлетворяют переданному предикату.
+
+fun filterTest(){
+val numbers = listOf(1, 2, 3, 4, 5)
+val evenNumbers = numbers.filter { it % 2 == 0 } // evenNumbers = [2, 4]
 }
