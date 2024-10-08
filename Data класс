@@ -5,8 +5,16 @@ data class User(val name: String, val age: Int)
 
     println(user1 == user2)
     println(user1)
-    val user3 = user1.copy(age = 31)
+    
+val user3 = user1.copy(age = 31)
     println(user3)  
+
+val person = Person("Bob", 25)
+    // Использование componentN() напрямую
+    val name = person.component1()
+    val age = person.component2()
+
+    println("Имя: $name, Возраст: $age")
 }
 
 //equals(): Сравнивает два объекта на равенство, основываясь на значениях свойств.
