@@ -1,0 +1,43 @@
+//Полиморфизм —  позволяет объектам разных классов обрабатывать данные через общий интерфейс. 
+//Проще говоря, полиморфизм позволяет использовать один и тот же метод для объектов разных типов.
+
+//Статический полиморфизм - достигается с помощью перегрузки методов
+open class Animal {
+    open fun sound() {
+        println("Animal sound")
+    }
+}
+
+class Dog : Animal() {
+    override fun sound() {
+        println("Bark")
+    }
+}
+
+class Cat : Animal() {
+    override fun sound() {
+        println("Meow")
+    }
+}
+
+fun main() {
+    val animals: List<Animal> = listOf(Dog(), Cat())
+
+    for (animal in animals) {
+        animal.sound() // Вывод: Bark, затем Meow
+    }
+}
+//Динамический достигается через наследование и переопределение методов.
+fun add(a: Int, b: Int): Int {
+    return a + b
+}
+
+fun add(a: Double, b: Double): Double {
+    return a + b
+}
+
+fun main() {
+    println(add(2, 3))         // Вывод: 5
+    println(add(2.5, 3.1))     // Вывод: 5.6
+}
+
