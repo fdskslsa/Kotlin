@@ -1,0 +1,46 @@
+fun main() {
+    val dog = Dog()
+    dog.sound() // Вывод: Bark
+    val flyingDog = FlyingDog()
+    flyingDog.fly() // Вывод: Flying like a bird
+    flyingDog.bark() // Вывод: Bark
+}
+
+//Одинарное наследование — это когда класс наследует свойства и методы только от одного родительского класса
+open class Animal {
+    open fun sound() {
+        println("Animal sound")
+    }
+}
+
+class Dog : Animal() {
+    override fun sound() {
+        println("Bark")
+    }
+}
+//Множественное наследование — это когда класс может наследовать свойства и методы от нескольких родительских классов. 
+Вместо этого в Kotlin можно использовать интерфейсы для достижения похожего эффекта.
+interface CanFly {
+    fun fly()
+}
+
+interface CanBark {
+    fun bark()
+}
+
+class FlyingDog : CanFly, CanBark {
+    override fun fly() {
+        println("Flying like a bird")
+    }
+
+    override fun bark() {
+        println("Bark")
+    }
+}
+
+
+
+
+
+
+
