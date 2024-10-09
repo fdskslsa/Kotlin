@@ -1,0 +1,43 @@
+//Инкапсуляция позволяет скрывать внутренние детали класса и предоставляет доступ к данным через методы.
+fun main() {
+    val account = BankAccount(100.0)
+    
+    println("Current balance: ${account.getBalance()}") // 100.0
+    
+    account.deposit(50.0) // Deposited: 50.0. New balance: 150.0
+    account.withdraw(30.0) // Withdrawn: 30.0. New balance: 120.0
+    
+    account.withdraw(200.0) // Invalid withdraw amount.
+}
+
+class BankAccount(private var balance: Double) {
+
+    // Метод для получения текущего баланса
+    fun getBalance(): Double {
+        return balance
+    }
+
+    // Метод для внесения денег
+    fun deposit(amount: Double) {
+        if (amount > 0) {
+            balance += amount
+            println("Deposited: $amount. New balance: $balance")
+        } else {
+            println("Deposit amount must be positive.")
+        }
+    }
+
+    // Метод для снятия денег
+    fun withdraw(amount: Double) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount
+            println("Withdrawn: $amount. New balance: $balance")
+        } else {
+            println("Invalid withdraw amount.")
+        }
+    }
+}
+//Скрытие данных: Поле balance объявлено как private, что значит, что его нельзя изменить напрямую из вне класса. 
+//Это защищает состояние объекта от некорректного изменения.
+//Методы для взаимодействия: Методы getBalance(), deposit(amount) и withdraw(amount) предоставляют безопасный интерфейс для 
+//работы с балансом. Пользователь класса может вносить и снимать деньги, не имея доступа к самой переменной balance.
